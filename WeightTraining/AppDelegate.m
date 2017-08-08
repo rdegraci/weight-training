@@ -95,4 +95,10 @@
     }
 }
 
+
+- (NSManagedObjectContext*)managedObjectContext {
+    return self.persistentContainer.viewContext;
+}
+
+
 @end

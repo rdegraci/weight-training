@@ -10,12 +10,25 @@
 		B3345A1A1F2623DD00C70675 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3345A191F2623DD00C70675 /* main.m */; };
 		B3345A1D1F2623DD00C70675 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3345A1C1F2623DD00C70675 /* AppDelegate.m */; };
 		B3345A201F2623DD00C70675 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3345A1F1F2623DD00C70675 /* ViewController.m */; };
-		B3345A231F2623DD00C70675 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3345A211F2623DD00C70675 /* Main.storyboard */; };
 		B3345A261F2623DD00C70675 /* WeightTraining.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3345A241F2623DD00C70675 /* WeightTraining.xcdatamodeld */; };
 		B3345A281F2623DD00C70675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3345A271F2623DD00C70675 /* Assets.xcassets */; };
 		B3345A2B1F2623DD00C70675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3345A291F2623DD00C70675 /* LaunchScreen.storyboard */; };
 		B3345A361F2623DD00C70675 /* WeightTrainingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3345A351F2623DD00C70675 /* WeightTrainingTests.m */; };
 		B3345A411F2623DD00C70675 /* WeightTrainingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3345A401F2623DD00C70675 /* WeightTrainingUITests.m */; };
+		B3CC68CA1F28C0E000383789 /* RecordCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68B41F28C0E000383789 /* RecordCreateViewController.m */; };
+		B3CC68CB1F28C0E000383789 /* RecordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68B61F28C0E000383789 /* RecordEditViewController.m */; };
+		B3CC68CC1F28C0E000383789 /* RecordIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68B81F28C0E000383789 /* RecordIndexViewController.m */; };
+		B3CC68CD1F28C0E000383789 /* RecordShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68BA1F28C0E000383789 /* RecordShowViewController.m */; };
+		B3CC68CE1F28C0E000383789 /* RecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68BC1F28C0E000383789 /* RecordTableViewCell.m */; };
+		B3CC68CF1F28C0E000383789 /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3CC68BD1F28C0E000383789 /* RecordTableViewCell.xib */; };
+		B3CC68D01F28C0E000383789 /* StationCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68BF1F28C0E000383789 /* StationCreateViewController.m */; };
+		B3CC68D11F28C0E000383789 /* StationEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68C11F28C0E000383789 /* StationEditViewController.m */; };
+		B3CC68D21F28C0E000383789 /* StationIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68C31F28C0E000383789 /* StationIndexViewController.m */; };
+		B3CC68D31F28C0E000383789 /* StationShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68C51F28C0E000383789 /* StationShowViewController.m */; };
+		B3CC68D41F28C0E000383789 /* StationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68C71F28C0E000383789 /* StationTableViewCell.m */; };
+		B3CC68D51F28C0E000383789 /* StationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3CC68C81F28C0E000383789 /* StationTableViewCell.xib */; };
+		B3CC68D91F28C37500383789 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CC68D81F28C37500383789 /* Main.storyboard */; };
+		B3CC68DC1F2A6D1800383789 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68DB1F2A6D1800383789 /* Utility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +55,6 @@
 		B3345A1C1F2623DD00C70675 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B3345A1E1F2623DD00C70675 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B3345A1F1F2623DD00C70675 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B3345A221F2623DD00C70675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3345A251F2623DD00C70675 /* WeightTraining.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeightTraining.xcdatamodel; sourceTree = "<group>"; };
 		B3345A271F2623DD00C70675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3345A2A1F2623DD00C70675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +65,31 @@
 		B3345A3C1F2623DD00C70675 /* WeightTrainingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightTrainingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3345A401F2623DD00C70675 /* WeightTrainingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeightTrainingUITests.m; sourceTree = "<group>"; };
 		B3345A421F2623DD00C70675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3CC68B31F28C0E000383789 /* RecordCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCreateViewController.h; sourceTree = "<group>"; };
+		B3CC68B41F28C0E000383789 /* RecordCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordCreateViewController.m; sourceTree = "<group>"; };
+		B3CC68B51F28C0E000383789 /* RecordEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordEditViewController.h; sourceTree = "<group>"; };
+		B3CC68B61F28C0E000383789 /* RecordEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordEditViewController.m; sourceTree = "<group>"; };
+		B3CC68B71F28C0E000383789 /* RecordIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordIndexViewController.h; sourceTree = "<group>"; };
+		B3CC68B81F28C0E000383789 /* RecordIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordIndexViewController.m; sourceTree = "<group>"; };
+		B3CC68B91F28C0E000383789 /* RecordShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordShowViewController.h; sourceTree = "<group>"; };
+		B3CC68BA1F28C0E000383789 /* RecordShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordShowViewController.m; sourceTree = "<group>"; };
+		B3CC68BB1F28C0E000383789 /* RecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTableViewCell.h; sourceTree = "<group>"; };
+		B3CC68BC1F28C0E000383789 /* RecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTableViewCell.m; sourceTree = "<group>"; };
+		B3CC68BD1F28C0E000383789 /* RecordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
+		B3CC68BE1F28C0E000383789 /* StationCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationCreateViewController.h; sourceTree = "<group>"; };
+		B3CC68BF1F28C0E000383789 /* StationCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationCreateViewController.m; sourceTree = "<group>"; };
+		B3CC68C01F28C0E000383789 /* StationEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationEditViewController.h; sourceTree = "<group>"; };
+		B3CC68C11F28C0E000383789 /* StationEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationEditViewController.m; sourceTree = "<group>"; };
+		B3CC68C21F28C0E000383789 /* StationIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationIndexViewController.h; sourceTree = "<group>"; };
+		B3CC68C31F28C0E000383789 /* StationIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationIndexViewController.m; sourceTree = "<group>"; };
+		B3CC68C41F28C0E000383789 /* StationShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationShowViewController.h; sourceTree = "<group>"; };
+		B3CC68C51F28C0E000383789 /* StationShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationShowViewController.m; sourceTree = "<group>"; };
+		B3CC68C61F28C0E000383789 /* StationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationTableViewCell.h; sourceTree = "<group>"; };
+		B3CC68C71F28C0E000383789 /* StationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationTableViewCell.m; sourceTree = "<group>"; };
+		B3CC68C81F28C0E000383789 /* StationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationTableViewCell.xib; sourceTree = "<group>"; };
+		B3CC68D81F28C37500383789 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B3CC68DA1F2A6D1800383789 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		B3CC68DB1F2A6D1800383789 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,16 +140,40 @@
 		B3345A171F2623DD00C70675 /* WeightTraining */ = {
 			isa = PBXGroup;
 			children = (
+				B3CC68D81F28C37500383789 /* Main.storyboard */,
+				B3CC68B31F28C0E000383789 /* RecordCreateViewController.h */,
+				B3CC68B41F28C0E000383789 /* RecordCreateViewController.m */,
+				B3CC68B51F28C0E000383789 /* RecordEditViewController.h */,
+				B3CC68B61F28C0E000383789 /* RecordEditViewController.m */,
+				B3CC68B71F28C0E000383789 /* RecordIndexViewController.h */,
+				B3CC68B81F28C0E000383789 /* RecordIndexViewController.m */,
+				B3CC68B91F28C0E000383789 /* RecordShowViewController.h */,
+				B3CC68BA1F28C0E000383789 /* RecordShowViewController.m */,
+				B3CC68BB1F28C0E000383789 /* RecordTableViewCell.h */,
+				B3CC68BC1F28C0E000383789 /* RecordTableViewCell.m */,
+				B3CC68BD1F28C0E000383789 /* RecordTableViewCell.xib */,
+				B3CC68BE1F28C0E000383789 /* StationCreateViewController.h */,
+				B3CC68BF1F28C0E000383789 /* StationCreateViewController.m */,
+				B3CC68C01F28C0E000383789 /* StationEditViewController.h */,
+				B3CC68C11F28C0E000383789 /* StationEditViewController.m */,
+				B3CC68C21F28C0E000383789 /* StationIndexViewController.h */,
+				B3CC68C31F28C0E000383789 /* StationIndexViewController.m */,
+				B3CC68C41F28C0E000383789 /* StationShowViewController.h */,
+				B3CC68C51F28C0E000383789 /* StationShowViewController.m */,
+				B3CC68C61F28C0E000383789 /* StationTableViewCell.h */,
+				B3CC68C71F28C0E000383789 /* StationTableViewCell.m */,
+				B3CC68C81F28C0E000383789 /* StationTableViewCell.xib */,
 				B3345A1B1F2623DD00C70675 /* AppDelegate.h */,
 				B3345A1C1F2623DD00C70675 /* AppDelegate.m */,
 				B3345A1E1F2623DD00C70675 /* ViewController.h */,
 				B3345A1F1F2623DD00C70675 /* ViewController.m */,
-				B3345A211F2623DD00C70675 /* Main.storyboard */,
 				B3345A271F2623DD00C70675 /* Assets.xcassets */,
 				B3345A291F2623DD00C70675 /* LaunchScreen.storyboard */,
 				B3345A2C1F2623DD00C70675 /* Info.plist */,
 				B3345A241F2623DD00C70675 /* WeightTraining.xcdatamodeld */,
 				B3345A181F2623DD00C70675 /* Supporting Files */,
+				B3CC68DA1F2A6D1800383789 /* Utility.h */,
+				B3CC68DB1F2A6D1800383789 /* Utility.m */,
 			);
 			path = WeightTraining;
 			sourceTree = "<group>";
@@ -250,8 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3345A2B1F2623DD00C70675 /* LaunchScreen.storyboard in Resources */,
+				B3CC68D91F28C37500383789 /* Main.storyboard in Resources */,
+				B3CC68D51F28C0E000383789 /* StationTableViewCell.xib in Resources */,
+				B3CC68CF1F28C0E000383789 /* RecordTableViewCell.xib in Resources */,
 				B3345A281F2623DD00C70675 /* Assets.xcassets in Resources */,
-				B3345A231F2623DD00C70675 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +339,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CC68D21F28C0E000383789 /* StationIndexViewController.m in Sources */,
 				B3345A201F2623DD00C70675 /* ViewController.m in Sources */,
+				B3CC68D41F28C0E000383789 /* StationTableViewCell.m in Sources */,
 				B3345A1D1F2623DD00C70675 /* AppDelegate.m in Sources */,
 				B3345A1A1F2623DD00C70675 /* main.m in Sources */,
+				B3CC68D31F28C0E000383789 /* StationShowViewController.m in Sources */,
+				B3CC68CE1F28C0E000383789 /* RecordTableViewCell.m in Sources */,
+				B3CC68DC1F2A6D1800383789 /* Utility.m in Sources */,
+				B3CC68CA1F28C0E000383789 /* RecordCreateViewController.m in Sources */,
+				B3CC68D01F28C0E000383789 /* StationCreateViewController.m in Sources */,
+				B3CC68CD1F28C0E000383789 /* RecordShowViewController.m in Sources */,
+				B3CC68D11F28C0E000383789 /* StationEditViewController.m in Sources */,
 				B3345A261F2623DD00C70675 /* WeightTraining.xcdatamodeld in Sources */,
+				B3CC68CC1F28C0E000383789 /* RecordIndexViewController.m in Sources */,
+				B3CC68CB1F28C0E000383789 /* RecordEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,14 +389,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B3345A211F2623DD00C70675 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3345A221F2623DD00C70675 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B3345A291F2623DD00C70675 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -513,6 +579,7 @@
 				B3345A471F2623DD00C70675 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3345A481F2623DD00C70675 /* Build configuration list for PBXNativeTarget "WeightTrainingTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +588,7 @@
 				B3345A4A1F2623DD00C70675 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3345A4B1F2623DD00C70675 /* Build configuration list for PBXNativeTarget "WeightTrainingUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +597,7 @@
 				B3345A4D1F2623DD00C70675 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
