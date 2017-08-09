@@ -45,7 +45,7 @@
     NSAssert(self.thirdSetWeightTextField != nil, @"self.thirdSetWeightTextField should not be nil");
 
     NSAssert(self.xsetCountTextField != nil, @"self.xsetCountTextField should not be nil");
-    
+    NSAssert(self.weightTextField != nil, @"self.weightTextField should not be nil");
     
     
     
@@ -66,6 +66,7 @@
     self.thirdSetWeightTextField.text = [@(self.station.thirdSetWeight) stringValue];
 
     self.xsetCountTextField.text = [@(self.station.xsetCount) stringValue];
+    self.weightTextField.text = [@(self.station.weight) stringValue];
     
     self.isAdvancedSwitch.on = false;
     self.advancedView.hidden = true;
@@ -168,6 +169,9 @@
         xsetCountNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.station.xsetCount = [[xsetCountNumberFormatter numberFromString:self.xsetCountTextField.text] integerValue];
         
+        NSNumberFormatter *weightNumberFormatter = [[NSNumberFormatter alloc] init];
+        weightNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+        self.station.weight = [[weightNumberFormatter numberFromString:self.weightTextField.text] integerValue];
         
         
         NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];

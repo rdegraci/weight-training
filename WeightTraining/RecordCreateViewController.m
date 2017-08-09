@@ -29,7 +29,6 @@
     self.navigationItem.leftBarButtonItem = self.leftBarButtonItem;
     
     
-    NSAssert(self.createdAtDatePicker != nil, @"self.createdAtDatePicker should not be nil");
     NSAssert(self.distanceTextField != nil, @"self.distanceTextField should not be nil");
     NSAssert(self.firstSetRepsTextField != nil, @"self.firstSetRepsTextField should not be nil");
     NSAssert(self.firstSetWeightTextField != nil, @"self.firstSetWeightTextField should not be nil");
@@ -42,7 +41,6 @@
     NSAssert(self.standardSetWeightTextField != nil, @"self.standardSetWeightTextField should not be nil");
     NSAssert(self.thirdSetRepsTextField != nil, @"self.thirdSetRepsTextField should not be nil");
     NSAssert(self.thirdSetWeightTextField != nil, @"self.thirdSetWeightTextField should not be nil");
-    NSAssert(self.updatedAtDatePicker != nil, @"self.updatedAtDatePicker should not be nil");
     NSAssert(self.xsetCountTextField != nil, @"self.xsetCountTextField should not be nil");
     
     
@@ -65,7 +63,6 @@
     self.record.updatedAt = [NSDate date];
     self.record.xsetCount = 0;
     
-    self.createdAtDatePicker.date = self.record.createdAt;
     self.distanceTextField.text = [@(self.record.distance) stringValue];
     self.firstSetRepsTextField.text = [@(self.record.firstSetReps) stringValue];
     self.firstSetWeightTextField.text = [@(self.record.firstSetWeight) stringValue];
@@ -78,11 +75,11 @@
     self.standardSetWeightTextField.text = [@(self.record.standardSetWeight) stringValue];
     self.thirdSetRepsTextField.text = [@(self.record.thirdSetReps) stringValue];
     self.thirdSetWeightTextField.text = [@(self.record.thirdSetWeight) stringValue];
-    self.updatedAtDatePicker.date = self.record.updatedAt;
     self.xsetCountTextField.text = [@(self.record.xsetCount) stringValue];
     
     
-    
+    self.advancedView.hidden = true;
+    self.standardView.hidden = false;
 }
 
 
@@ -104,9 +101,23 @@
 
 #pragma mark - IBActions
 
+- (IBAction)tapAdvancedSettingsSwitch:(id)sender {
+    
+    if (self.isAdvancedSwitch.isOn) {
+        self.standardView.hidden = true;
+        self.advancedView.hidden = false;
+    } else {
+        self.standardView.hidden = false;
+        self.advancedView.hidden = true;
+    }
+}
+
 - (IBAction)touchLeftBarButton:(id)sender {
     
     // Cancel
+    
+    NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    [managedObjectContext deleteObject:self.record];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -117,7 +128,7 @@
     
     if (self.record) {
         
-        self.record.createdAt = self.createdAtDatePicker.date;
+        self.record.createdAt = [NSDate date];
         
         NSNumberFormatter *distanceNumberFormatter = [[NSNumberFormatter alloc] init];
         distanceNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -133,8 +144,8 @@
         firstSetWeightNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.record.firstSetWeight = [[firstSetWeightNumberFormatter numberFromString:self.firstSetWeightTextField.text] integerValue];
         
-        self.record.isAdvanced = @(self.isAdvancedSwitch.enabled);
-        self.record.isMetric = @(self.isMetricSwitch.enabled);
+        self.record.isAdvanced = @(self.isAdvancedSwitch.isOn);
+        self.record.isMetric = @(self.isMetricSwitch.isOn);
         
         NSNumberFormatter *lapCountNumberFormatter = [[NSNumberFormatter alloc] init];
         lapCountNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -170,7 +181,7 @@
         thirdSetWeightNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.record.thirdSetWeight = [[thirdSetWeightNumberFormatter numberFromString:self.thirdSetWeightTextField.text] integerValue];
         
-        self.record.updatedAt = self.updatedAtDatePicker.date;
+        self.record.updatedAt = [NSDate date];
         
         NSNumberFormatter *xsetCountNumberFormatter = [[NSNumberFormatter alloc] init];
         xsetCountNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;

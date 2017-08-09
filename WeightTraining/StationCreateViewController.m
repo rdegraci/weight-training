@@ -44,7 +44,7 @@
     NSAssert(self.thirdSetRepsTextField != nil, @"self.thirdSetRepsTextField should not be nil");
     NSAssert(self.thirdSetWeightTextField != nil, @"self.thirdSetWeightTextField should not be nil");
     NSAssert(self.xsetCountTextField != nil, @"self.xsetCountTextField should not be nil");
-    
+    NSAssert(self.weightTextField != nil, @"self.weightTextField should not be nil");
     
     NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     self.station = [NSEntityDescription insertNewObjectForEntityForName:@"Station" inManagedObjectContext:managedObjectContext];
@@ -82,6 +82,7 @@
     self.thirdSetRepsTextField.text = [@(self.station.thirdSetReps) stringValue];
     self.thirdSetWeightTextField.text = [@(self.station.thirdSetWeight) stringValue];
     self.xsetCountTextField.text = [@(self.station.xsetCount) stringValue];
+    self.weightTextField.text = [@(self.station.weight) stringValue];
     
     self.advancedView.hidden = true;
     
@@ -110,6 +111,9 @@
 - (IBAction)touchLeftBarButton:(id)sender {
     
     // Cancel
+    
+    NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    [managedObjectContext deleteObject:self.station];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -185,6 +189,9 @@
         xsetCountNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.station.xsetCount = [[xsetCountNumberFormatter numberFromString:self.xsetCountTextField.text] integerValue];
         
+        NSNumberFormatter *weightNumberFormatter = [[NSNumberFormatter alloc] init];
+        weightNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+        self.station.weight = [[weightNumberFormatter numberFromString:self.weightTextField.text] integerValue];
         
         
         NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];

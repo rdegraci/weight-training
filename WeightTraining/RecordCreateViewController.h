@@ -5,7 +5,6 @@
 
 @interface RecordCreateViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UIDatePicker* createdAtDatePicker;
 @property (nonatomic, strong) IBOutlet UITextField* distanceTextField;
 @property (nonatomic, strong) IBOutlet UITextField* firstSetRepsTextField;
 @property (nonatomic, strong) IBOutlet UITextField* firstSetWeightTextField;
@@ -18,8 +17,9 @@
 @property (nonatomic, strong) IBOutlet UITextField* standardSetWeightTextField;
 @property (nonatomic, strong) IBOutlet UITextField* thirdSetRepsTextField;
 @property (nonatomic, strong) IBOutlet UITextField* thirdSetWeightTextField;
-@property (nonatomic, strong) IBOutlet UIDatePicker* updatedAtDatePicker;
 @property (nonatomic, strong) IBOutlet UITextField* xsetCountTextField;
+@property (nonatomic, strong) IBOutlet UIView* advancedView;
+@property (nonatomic, strong) IBOutlet UIView* standardView;
 
 
 @property (nonatomic, strong) Record* record;
