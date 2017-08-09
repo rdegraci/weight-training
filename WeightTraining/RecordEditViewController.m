@@ -28,7 +28,6 @@
     self.leftBarButtonItem.action = @selector(touchLeftBarButton:);
     self.navigationItem.leftBarButtonItem = self.leftBarButtonItem;
     
-    NSAssert(self.createdAtDatePicker != nil, @"self.createdAtDatePicker should not be nil");
     NSAssert(self.distanceTextField != nil, @"self.distanceTextField should not be nil");
     NSAssert(self.firstSetRepsTextField != nil, @"self.firstSetRepsTextField should not be nil");
     NSAssert(self.firstSetWeightTextField != nil, @"self.firstSetWeightTextField should not be nil");
@@ -41,13 +40,11 @@
     NSAssert(self.standardSetWeightTextField != nil, @"self.standardSetWeightTextField should not be nil");
     NSAssert(self.thirdSetRepsTextField != nil, @"self.thirdSetRepsTextField should not be nil");
     NSAssert(self.thirdSetWeightTextField != nil, @"self.thirdSetWeightTextField should not be nil");
-    NSAssert(self.updatedAtDatePicker != nil, @"self.updatedAtDatePicker should not be nil");
     NSAssert(self.xsetCountTextField != nil, @"self.xsetCountTextField should not be nil");
     
     
     
     
-    self.createdAtDatePicker.date = self.record.createdAt;
     self.distanceTextField.text = [@(self.record.distance) stringValue];
     self.firstSetRepsTextField.text = [@(self.record.firstSetReps) stringValue];
     self.firstSetWeightTextField.text = [@(self.record.firstSetWeight) stringValue];
@@ -60,9 +57,10 @@
     self.standardSetWeightTextField.text = [@(self.record.standardSetWeight) stringValue];
     self.thirdSetRepsTextField.text = [@(self.record.thirdSetReps) stringValue];
     self.thirdSetWeightTextField.text = [@(self.record.thirdSetWeight) stringValue];
-    self.updatedAtDatePicker.date = self.record.updatedAt;
     self.xsetCountTextField.text = [@(self.record.xsetCount) stringValue];
     
+    self.advancedView.hidden = true;
+    self.standardView.hidden = false;
 }
 
 
@@ -83,6 +81,16 @@
 
 
 #pragma mark - IBActions
+- (IBAction)tappedAdvancedSwitch:(id)sender {
+    
+    if (self.isAdvancedSwitch.isOn) {
+        self.advancedView.hidden = false;
+        self.standardView.hidden = true;
+    } else {
+        self.advancedView.hidden = true;
+        self.standardView.hidden = false;
+    }
+}
 
 - (IBAction)touchLeftBarButton:(id)sender {
     
@@ -96,8 +104,6 @@
     // Save
     
     if (self.record) {
-        
-        self.record.createdAt = self.createdAtDatePicker.date;
         
         NSNumberFormatter *distanceNumberFormatter = [[NSNumberFormatter alloc] init];
         distanceNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -150,7 +156,7 @@
         thirdSetWeightNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.record.thirdSetWeight = [[thirdSetWeightNumberFormatter numberFromString:self.thirdSetWeightTextField.text] integerValue];
         
-        self.record.updatedAt = self.updatedAtDatePicker.date;
+        self.record.updatedAt = [NSDate date];
         
         NSNumberFormatter *xsetCountNumberFormatter = [[NSNumberFormatter alloc] init];
         xsetCountNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
