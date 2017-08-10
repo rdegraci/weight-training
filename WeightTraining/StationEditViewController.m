@@ -55,8 +55,8 @@
 
     self.firstSetRepsTextField.text = [@(self.station.firstSetReps) stringValue];
     self.firstSetWeightTextField.text = [@(self.station.firstSetWeight) stringValue];
-    self.isAdvancedSwitch.enabled = self.station.isAdvanced;
-    self.isMetricSwitch.enabled = self.station.isMetric;
+    self.isAdvancedSwitch.on = self.station.isAdvanced;
+    self.isMetricSwitch.on = self.station.isMetric;
     self.nameTextField.text = self.station.name;
     self.repCountTextField.text = [@(self.station.repCount) stringValue];
     self.seatSettingTextField.text = [@(self.station.seatSetting) stringValue];
@@ -68,9 +68,15 @@
     self.xsetCountTextField.text = [@(self.station.xsetCount) stringValue];
     self.weightTextField.text = [@(self.station.weight) stringValue];
     
-    self.isAdvancedSwitch.on = false;
-    self.advancedView.hidden = true;
-    self.settingsView.hidden = false;
+    
+    if (self.isAdvancedSwitch.isOn) {
+        self.advancedView.hidden = false;
+        self.standardView.hidden = true;
+    } else {
+        self.advancedView.hidden = true;
+        self.standardView.hidden = false;
+    }
+
 }
 
 
@@ -130,8 +136,8 @@
         firstSetWeightNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.station.firstSetWeight = [[firstSetWeightNumberFormatter numberFromString:self.firstSetWeightTextField.text] integerValue];
         
-        self.station.isAdvanced = @(self.isAdvancedSwitch.enabled);
-        self.station.isMetric = @(self.isMetricSwitch.enabled);
+        self.station.isAdvanced = self.isAdvancedSwitch.isOn;
+        self.station.isMetric = self.isMetricSwitch.isOn;
         self.station.name = self.nameTextField.text;
         
         NSNumberFormatter *repCountNumberFormatter = [[NSNumberFormatter alloc] init];

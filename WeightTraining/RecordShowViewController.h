@@ -5,7 +5,6 @@
 
 @interface RecordShowViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UIDatePicker* createdAtDatePicker;
 @property (nonatomic, strong) IBOutlet UILabel* distanceLabel;
 @property (nonatomic, strong) IBOutlet UILabel* firstSetRepsLabel;
 @property (nonatomic, strong) IBOutlet UILabel* firstSetWeightLabel;
@@ -18,9 +17,9 @@
 @property (nonatomic, strong) IBOutlet UILabel* standardSetWeightLabel;
 @property (nonatomic, strong) IBOutlet UILabel* thirdSetRepsLabel;
 @property (nonatomic, strong) IBOutlet UILabel* thirdSetWeightLabel;
-@property (nonatomic, strong) IBOutlet UIDatePicker* updatedAtDatePicker;
 @property (nonatomic, strong) IBOutlet UILabel* xsetCountLabel;
-
+@property (nonatomic, strong) IBOutlet UIView* advancedView;
+@property (nonatomic, strong) IBOutlet UIView* standardView;
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem* rightBarButtonItem;
 

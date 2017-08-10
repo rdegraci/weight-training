@@ -150,8 +150,8 @@
         firstSetWeightNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.station.firstSetWeight = [[firstSetWeightNumberFormatter numberFromString:self.firstSetWeightTextField.text] integerValue];
         
-        self.station.isAdvanced = @(self.isAdvancedSwitch.on);
-        self.station.isMetric = @(self.isMetricSwitch.on);
+        self.station.isAdvanced = self.isAdvancedSwitch.isOn;
+        self.station.isMetric = self.isMetricSwitch.isOn;
         self.station.name = self.nameTextField.text;
         
         NSNumberFormatter *repCountNumberFormatter = [[NSNumberFormatter alloc] init];

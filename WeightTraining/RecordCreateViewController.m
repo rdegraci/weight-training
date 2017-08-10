@@ -66,8 +66,8 @@
     self.distanceTextField.text = [@(self.record.distance) stringValue];
     self.firstSetRepsTextField.text = [@(self.record.firstSetReps) stringValue];
     self.firstSetWeightTextField.text = [@(self.record.firstSetWeight) stringValue];
-    self.isAdvancedSwitch.enabled = self.record.isAdvanced;
-    self.isMetricSwitch.enabled = self.record.isMetric;
+    self.isAdvancedSwitch.on = self.record.isAdvanced;
+    self.isMetricSwitch.on = self.record.isMetric;
     self.lapCountTextField.text = [@(self.record.lapCount) stringValue];
     self.secondSetRepsTextField.text = [@(self.record.secondSetReps) stringValue];
     self.secondSetWeightTextField.text = [@(self.record.secondSetWeight) stringValue];
@@ -144,8 +144,8 @@
         firstSetWeightNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.record.firstSetWeight = [[firstSetWeightNumberFormatter numberFromString:self.firstSetWeightTextField.text] integerValue];
         
-        self.record.isAdvanced = @(self.isAdvancedSwitch.isOn);
-        self.record.isMetric = @(self.isMetricSwitch.isOn);
+        self.record.isAdvanced = self.isAdvancedSwitch.isOn;
+        self.record.isMetric = self.isMetricSwitch.isOn;
         
         NSNumberFormatter *lapCountNumberFormatter = [[NSNumberFormatter alloc] init];
         lapCountNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;

@@ -20,35 +20,25 @@
 
 - (void)configureWithRecord:(Record*)record {
     
-    self.createdAtDatePicker.date = record.createdAt;
+    if (record.isAdvanced) {
+        self.textLabel.text = [NSString stringWithFormat:@"S1: R:%@ W:%@ - S2: R:%@ W:%@ - S3: R:%@ W:%@",
+                               [@(record.firstSetReps) stringValue],
+                               [@(record.firstSetWeight) stringValue],
+                               [@(record.secondSetReps) stringValue],
+                               [@(record.secondSetWeight) stringValue],
+                               [@(record.thirdSetReps) stringValue],
+                               [@(record.thirdSetWeight) stringValue]];
+        
+        self.detailTextLabel.text = [record.updatedAt description];
+    } else {
+        
+        self.textLabel.text = [NSString stringWithFormat:@"S:%@ R:%@ W:%@ ",
+                                [@(record.xsetCount) stringValue],
+                                [@(record.standardReps) stringValue],
+                                [@(record.standardSetWeight) stringValue]];
+    }
     
-    self.distanceLabel.text = [@(record.distance) stringValue];
-    
-    self.firstSetRepsLabel.text = [@(record.firstSetReps) stringValue];
-    
-    self.firstSetWeightLabel.text = [@(record.firstSetWeight) stringValue];
-    
-    [self.isAdvancedSwitch setOn:record.isAdvanced];
-    
-    [self.isMetricSwitch setOn:record.isMetric];
-    
-    self.lapCountLabel.text = [@(record.lapCount) stringValue];
-    
-    self.secondSetRepsLabel.text = [@(record.secondSetReps) stringValue];
-    
-    self.secondSetWeightLabel.text = [@(record.secondSetWeight) stringValue];
-    
-    self.standardRepsLabel.text = [@(record.standardReps) stringValue];
-    
-    self.standardSetWeightLabel.text = [@(record.standardSetWeight) stringValue];
-    
-    self.thirdSetRepsLabel.text = [@(record.thirdSetReps) stringValue];
-    
-    self.thirdSetWeightLabel.text = [@(record.thirdSetWeight) stringValue];
-    
-    self.updatedAtDatePicker.date = record.updatedAt;
-    
-    self.xsetCountLabel.text = [@(record.xsetCount) stringValue];
-    
+    self.detailTextLabel.text = [record.updatedAt description];
+        
 }
 @end

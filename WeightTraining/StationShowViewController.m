@@ -38,8 +38,8 @@
     self.armSettingLabel.text = [@(self.station.armSetting) stringValue];
     self.backSettingLabel.text = [@(self.station.backSetting) stringValue];
     self.chestSettingLabel.text = [@(self.station.chestSetting) stringValue];
-    self.isAdvancedSwitch.enabled = self.station.isAdvanced;
-    self.isMetricSwitch.enabled = self.station.isMetric;
+    self.isAdvancedSwitch.on = self.station.isAdvanced;
+    self.isMetricSwitch.on = self.station.isMetric;
     self.nameLabel.text = self.station.name;
     self.seatSettingLabel.text = [@(self.station.seatSetting) stringValue];
  

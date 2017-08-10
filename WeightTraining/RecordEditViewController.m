@@ -59,8 +59,13 @@
     self.thirdSetWeightTextField.text = [@(self.record.thirdSetWeight) stringValue];
     self.xsetCountTextField.text = [@(self.record.xsetCount) stringValue];
     
-    self.advancedView.hidden = true;
-    self.standardView.hidden = false;
+    if (self.isAdvancedSwitch.isOn) {
+        self.advancedView.hidden = false;
+        self.standardView.hidden = true;
+    } else {
+        self.advancedView.hidden = true;
+        self.standardView.hidden = false;
+    }
 }
 
 
@@ -119,8 +124,8 @@
         firstSetWeightNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.record.firstSetWeight = [[firstSetWeightNumberFormatter numberFromString:self.firstSetWeightTextField.text] integerValue];
         
-        self.record.isAdvanced = @(self.isAdvancedSwitch.enabled);
-        self.record.isMetric = @(self.isMetricSwitch.enabled);
+        self.record.isAdvanced = self.isAdvancedSwitch.isOn;
+        self.record.isMetric = self.isMetricSwitch.isOn;
         
         NSNumberFormatter *lapCountNumberFormatter = [[NSNumberFormatter alloc] init];
         lapCountNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;

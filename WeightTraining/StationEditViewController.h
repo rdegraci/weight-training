@@ -26,6 +26,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *settingsView;
 @property (strong, nonatomic) IBOutlet UIView *advancedView;
+@property (strong, nonatomic) IBOutlet UIView *standardView;
 
 @property (nonatomic, strong) Station* station;
 

@@ -23,7 +23,6 @@
     self.rightBarButtonItem.action = @selector(touchRightBarButton:);
     self.navigationItem.rightBarButtonItem = self.rightBarButtonItem;
     
-    NSAssert(self.createdAtDatePicker != nil, @"self.createdAtDatePicker should not be nil");
     NSAssert(self.distanceLabel != nil, @"self.distanceLabel should not be nil");
     NSAssert(self.firstSetRepsLabel != nil, @"self.firstSetRepsLabel should not be nil");
     NSAssert(self.firstSetWeightLabel != nil, @"self.firstSetWeightLabel should not be nil");
@@ -36,30 +35,36 @@
     NSAssert(self.standardSetWeightLabel != nil, @"self.standardSetWeightLabel should not be nil");
     NSAssert(self.thirdSetRepsLabel != nil, @"self.thirdSetRepsLabel should not be nil");
     NSAssert(self.thirdSetWeightLabel != nil, @"self.thirdSetWeightLabel should not be nil");
-    NSAssert(self.updatedAtDatePicker != nil, @"self.updatedAtDatePicker should not be nil");
     NSAssert(self.xsetCountLabel != nil, @"self.xsetCountLabel should not be nil");
-    
+    NSAssert(self.standardView != nil, @"self.standardView should not be nil");
+    NSAssert(self.advancedView != nil, @"self.advancedView should not be nil");
     
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.createdAtDatePicker.date = self.record.createdAt;
-    self.distanceLabel.text = [@(self.record.distance) stringValue];
-    self.firstSetRepsLabel.text = [@(self.record.firstSetReps) stringValue];
-    self.firstSetWeightLabel.text = [@(self.record.firstSetWeight) stringValue];
-    self.isAdvancedSwitch.enabled = self.record.isAdvanced;
-    self.isMetricSwitch.enabled = self.record.isMetric;
-    self.lapCountLabel.text = [@(self.record.lapCount) stringValue];
-    self.secondSetRepsLabel.text = [@(self.record.secondSetReps) stringValue];
-    self.secondSetWeightLabel.text = [@(self.record.secondSetWeight) stringValue];
-    self.standardRepsLabel.text = [@(self.record.standardReps) stringValue];
-    self.standardSetWeightLabel.text = [@(self.record.standardSetWeight) stringValue];
-    self.thirdSetRepsLabel.text = [@(self.record.thirdSetReps) stringValue];
-    self.thirdSetWeightLabel.text = [@(self.record.thirdSetWeight) stringValue];
-    self.updatedAtDatePicker.date = self.record.updatedAt;
-    self.xsetCountLabel.text = [@(self.record.xsetCount) stringValue];
+
+    self.distanceLabel.text = [NSString stringWithFormat:@"Distance: %@", [@(self.record.distance) stringValue]];
+    self.firstSetRepsLabel.text = [NSString stringWithFormat:@"1st Set Reps: %@",[@(self.record.firstSetReps) stringValue]];
+    self.firstSetWeightLabel.text = [NSString stringWithFormat:@"1st Set Weight: %@",[@(self.record.firstSetWeight) stringValue]];
+    self.isAdvancedSwitch.on = self.record.isAdvanced;
+    self.isMetricSwitch.on = self.record.isMetric;
+    self.lapCountLabel.text = [NSString stringWithFormat:@"Laps: %@", [@(self.record.lapCount) stringValue]];
+    self.secondSetRepsLabel.text = [NSString stringWithFormat:@"2nd Set Reps: %@",[@(self.record.secondSetReps) stringValue]];
+    self.secondSetWeightLabel.text = [NSString stringWithFormat:@"2nd Set Weight: %@",[@(self.record.secondSetWeight) stringValue]];
+    self.standardRepsLabel.text = [NSString stringWithFormat:@"Reps: %@",[@(self.record.standardReps) stringValue]];
+    self.standardSetWeightLabel.text = [NSString stringWithFormat:@"Weight: %@",[@(self.record.standardSetWeight) stringValue]];
+    self.thirdSetRepsLabel.text = [NSString stringWithFormat:@"3rd Set Reps: %@",[@(self.record.thirdSetReps) stringValue]];
+    self.thirdSetWeightLabel.text = [NSString stringWithFormat:@"3rd Set Weight: %@",[@(self.record.thirdSetWeight) stringValue]];
+    self.xsetCountLabel.text = [NSString stringWithFormat:@"Sets: %@", [@(self.record.xsetCount) stringValue]];
     
+    if (self.isAdvancedSwitch.isOn) {
+        self.advancedView.hidden = false;
+        self.standardView.hidden = true;
+    } else {
+        self.advancedView.hidden = true;
+        self.standardView.hidden = false;
+    }
 }
 
 
@@ -80,6 +85,16 @@
 
 
 #pragma mark - IBActions
+- (IBAction)tappedAdvancedSwitch:(id)sender {
+    
+    if (self.isAdvancedSwitch.isOn) {
+        self.advancedView.hidden = false;
+        self.standardView.hidden = true;
+    } else {
+        self.advancedView.hidden = true;
+        self.standardView.hidden = false;
+    }
+}
 
 - (IBAction)touchRightBarButton:(id)sender {
     
