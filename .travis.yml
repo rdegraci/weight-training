@@ -1,4 +1,3 @@
 language: objective-c
-xcode_project: WeightTraining.xcodeproj # path to your xcodeproj folder
-xcode_scheme: WeightTrainingTests
 osx_image: xcode8.3
+script: xcodebuild clean && xcodebuild build test -configuration Debug -sdk iphonesimulator10.3 -project WeightTraining.xcodeproj -scheme WeightTrainingTests -destination 'platform=iOS Simulator,name=iPhone 7 Plus' CODE_SIGNING_REQUIRED=NO
