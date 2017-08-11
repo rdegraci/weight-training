@@ -27,5 +27,9 @@
 @property (nonatomic, strong) IBOutlet UIBarButtonItem* rightBarButtonItem;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem* leftBarButtonItem;
 
+@property (nonatomic, strong) void(^addToStation)(Record* record);
+
+
+
 @end
           

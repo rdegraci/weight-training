@@ -3,7 +3,7 @@
 
 @class Station;
 
-@interface StationShowViewController : UIViewController
+@interface StationShowViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UILabel* armSettingLabel;
 @property (nonatomic, strong) IBOutlet UILabel* backSettingLabel;
@@ -26,9 +26,11 @@
 
 
 @property (nonatomic, strong) Station* station;
+@property (nonatomic, strong) NSArray* records;
 
 @property (strong, nonatomic) IBOutlet UIView *positionView;
 
+@property (nonatomic, strong) IBOutlet UITableView* recordTableView;
 
 @end
           

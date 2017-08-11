@@ -572,7 +572,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ftj-bN-PkM">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ftj-bN-PkM" userLabel="SettingsView">
                                         <rect key="frame" x="0.0" y="159" width="375" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -657,6 +657,8 @@
                         <outlet property="seatSettingTextField" destination="uvM-sT-zWE" id="bDE-ug-zFr"/>
                         <outlet property="secondSetRepsTextField" destination="By1-1r-maC" id="dRt-zs-eAM"/>
                         <outlet property="secondSetWeightTextField" destination="tjE-0F-MAj" id="KgL-6M-L6U"/>
+                        <outlet property="settingsView" destination="Ftj-bN-PkM" id="raW-7R-yxk"/>
+                        <outlet property="standardView" destination="ObQ-lt-pId" id="jU7-Iq-ZwG"/>
                         <outlet property="thirdSetRepsTextField" destination="goB-Fa-crY" id="0ja-p7-1ig"/>
                         <outlet property="thirdSetWeightTextField" destination="3co-n0-o4g" id="HVV-Op-KcN"/>
                         <outlet property="weightTextField" destination="Gaw-fB-4yN" id="8dI-qG-5xA"/>
@@ -922,18 +924,22 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A5e-VK-67W">
-                                <rect key="frame" x="0.0" y="313" width="375" height="354"/>
+                                <rect key="frame" x="0.0" y="300" width="375" height="367"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kzC-WD-xcT" id="L7Q-Bm-ksk"/>
+                                    <outlet property="delegate" destination="kzC-WD-xcT" id="wXj-Nk-L2W"/>
+                                </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bqJ-sD-tSb">
-                                <rect key="frame" x="0.0" y="269" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="v6P-Of-der"/>
-                                    <barButtonItem title="Add Session" id="r1m-GC-6d7"/>
-                                </items>
-                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTV-ED-VXR">
+                                <rect key="frame" x="274" y="256" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Session"/>
+                                <connections>
+                                    <action selector="touchAddSessionButton:" destination="kzC-WD-xcT" eventType="touchUpInside" id="10A-sk-SeK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -945,6 +951,7 @@
                         <outlet property="isMetricSwitch" destination="oUx-ox-Ovp" id="qoc-Kx-XW5"/>
                         <outlet property="nameLabel" destination="W1U-om-nOd" id="xeP-Ix-3W8"/>
                         <outlet property="positionView" destination="c5Q-ZF-l2d" id="AmS-bL-bGR"/>
+                        <outlet property="recordTableView" destination="A5e-VK-67W" id="StL-LM-BNC"/>
                         <outlet property="rightBarButtonItem" destination="Sic-WU-5gG" id="Oe3-ae-nI3"/>
                         <outlet property="seatSettingLabel" destination="OEG-jY-U2A" id="BkK-Ze-0Sk"/>
                     </connections>

@@ -2,6 +2,9 @@
 
 #import "StationShowViewController.h"
 #import "StationEditViewController.h"
+#import "RecordCreateViewController.h"
+#import "RecordShowViewController.h"
+#import "RecordTableViewCell.h"
 
 #import "Station+CoreDataClass.h"
 #import "AppDelegate.h"
@@ -30,8 +33,11 @@
     NSAssert(self.isMetricSwitch != nil, @"self.isMetricSwitch should not be nil");
     NSAssert(self.nameLabel != nil, @"self.nameLabel should not be nil");
     NSAssert(self.seatSettingLabel != nil, @"self.seatSettingLabel should not be nil");
+    NSAssert(self.recordTableView != nil, @"recordTableView should not be nil");
     
-    
+    [self.recordTableView registerNib:[UINib nibWithNibName:@"RecordTableViewCell" bundle:nil] forCellReuseIdentifier:@"RecordTableViewCell"];
+
+    self.records = [NSArray new];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -43,7 +49,7 @@
     self.nameLabel.text = self.station.name;
     self.seatSettingLabel.text = [@(self.station.seatSetting) stringValue];
  
-    
+        [self reloadRecordTableView];
 }
 
 
@@ -62,8 +68,30 @@
  }
  */
 
+#pragma mark - Functions
+
+- (void)reloadRecordTableView {
+
+    self.records = self.station.records.allObjects;
+    [self.recordTableView reloadData];
+}
+
 
 #pragma mark - IBActions
+
+- (IBAction)touchAddSessionButton:(id)sender {
+    
+    // Add Record
+    
+    RecordCreateViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RecordCreateViewController"];
+    
+    vc.addToStation = ^(Record* record){
+        [self.station addRecordsObject:record];
+    };
+    
+    [self presentViewController:vc animated:true completion:nil];
+}
+
 
 - (IBAction)touchRightBarButton:(id)sender {
     
@@ -72,6 +100,38 @@
     StationEditViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"StationEditViewController"];
     vc.station = self.station;
     [self.navigationController presentViewController:vc animated:YES completion:nil];
+}
+
+#pragma mark - UITableViewDelegate Protocol
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Show Record
+    
+    RecordShowViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RecordShowViewController"];
+    vc.record = [self.records objectAtIndex:[indexPath row]];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - UITableViewDatasource Delegate Protocol
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    RecordTableViewCell* cell = (RecordTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"RecordTableViewCell"];
+    NSAssert(cell != nil, @"cell should not be nil");
+    
+    
+    
+    Record* record = [self.records objectAtIndex:[indexPath row]];
+    [cell configureWithRecord:record];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.records count];
 }
 
 

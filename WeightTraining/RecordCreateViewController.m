@@ -43,9 +43,9 @@
     NSAssert(self.thirdSetWeightTextField != nil, @"self.thirdSetWeightTextField should not be nil");
     NSAssert(self.xsetCountTextField != nil, @"self.xsetCountTextField should not be nil");
     
-    
     NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     self.record = [NSEntityDescription insertNewObjectForEntityForName:@"Record" inManagedObjectContext:managedObjectContext];
+
     
     self.record.createdAt = [NSDate date];
     self.record.distance = 0;
@@ -97,6 +97,8 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+#pragma mark - Functions
 
 
 #pragma mark - IBActions
@@ -187,7 +189,10 @@
         xsetCountNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.record.xsetCount = [[xsetCountNumberFormatter numberFromString:self.xsetCountTextField.text] integerValue];
         
-        
+        if (self.addToStation) {
+            self.addToStation((self.record));
+        }
+
         
         NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
         NSError* error;
