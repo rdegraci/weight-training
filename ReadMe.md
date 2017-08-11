@@ -7,7 +7,7 @@ Weight Training is an open-source iOS mobile app designed for creating and track
 
 Please [create a Github Issue](https://github.com/rdegraci/weight-training/issues/new) or [chat with us on Gitter](https://gitter.im/rdegraci/weight-training) if you have any questions or encounter problems while building or running the Weight Training Tracker App. 
 
-The development roadmap can be found at ![Pivotal Tracker - Weight Training Tracker App](https://www.pivotaltracker.com/n/projects/2091831)
+The development roadmap can be found at [Pivotal Tracker - Weight Training Tracker App](https://www.pivotaltracker.com/n/projects/2091831)
 
 ## Copyright & License (MIT License)
 
