@@ -47,9 +47,17 @@
     [super tearDown];
 }
 
-- (void)testExample {
+- (void)test_150161646_no_stations_warning {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.navigationBars[@"Records"].buttons[@"Add"] tap];
+    [app.alerts[@"Unable to create Record"].buttons[@"OK"] tap];
+    sleep(5);
+    XCTAssert(app.navigationBars[@"Create Station"].hittable, @"Create Station should exist");
+    [app.navigationBars[@"Create Station"].buttons[@"Cancel"] tap];
+    
 }
 
 @end
