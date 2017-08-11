@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: WeightTraining.xcodeproj # path to your xcodeproj folder
+xcode_scheme: WeightTrainingTests
+osx_image: xcode8.3
