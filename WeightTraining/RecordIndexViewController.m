@@ -20,7 +20,7 @@
 #import "RecordIndexViewController.h"
 #import "RecordCreateViewController.h"
 #import "RecordShowViewController.h"
-
+#import "StationIndexViewController.h"
 #import "RecordTableViewCell.h"
 
 #import "Record+CoreDataClass.h"
@@ -98,11 +98,42 @@
 
 - (IBAction)touchRightBarButton:(id)sender {
     
-    // Create Record
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Station"];
+    NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    NSError *error = nil;
+    NSArray *results = [managedObjectContext executeFetchRequest:request error:&error];
+    if (!results) {
+    } else {
+        if (results.count > 0) {
+            
+            // Create Record
+            
+            RecordCreateViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RecordCreateViewController"];
+            
+            [self.navigationController presentViewController:vc animated:YES completion:nil];
+            
+        } else {
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Unable to create Record"
+                                                                           message:@"You will need to create a Station first"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {
+                                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                                          self.tabBarController.selectedIndex = 1;
+                                                                          UINavigationController* navController = (UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:1];
+                                                                          StationIndexViewController* stationIndexController = [navController.viewControllers firstObject];
+                                                                          [stationIndexController touchRightBarButton:nil];
+                                                                      });
+                                                                  }];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }
+
     
-    RecordCreateViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RecordCreateViewController"];
-    
-    [self.navigationController presentViewController:vc animated:YES completion:nil];
+
 }
 
 

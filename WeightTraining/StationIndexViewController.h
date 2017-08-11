@@ -27,8 +27,11 @@
 
 @property (nonatomic, strong) NSArray* stations;
 
+- (IBAction)touchRightBarButton:(id)sender;
+
 - (void)reloadTableView;
 - (void)pulledToRefresh;
+
 
 @end
         
