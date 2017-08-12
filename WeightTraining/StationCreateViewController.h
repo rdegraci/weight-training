@@ -39,10 +39,12 @@
 @property (nonatomic, strong) IBOutlet UITextField* thirdSetWeightTextField;
 @property (nonatomic, strong) IBOutlet UITextField* xsetCountTextField;
 @property (nonatomic, strong) IBOutlet UITextField* weightTextField;
+@property (nonatomic, strong) IBOutlet UITextField* distanceTextField;
+@property (nonatomic, strong) IBOutlet UITextField* lapTextField;
 
 @property (strong, nonatomic) IBOutlet UIView *settingsView;
 @property (strong, nonatomic) IBOutlet UIView *advancedView;
-
+@property (strong, nonatomic) IBOutlet UIView *standardview;
 
 @property (nonatomic, strong) Station* station;
 

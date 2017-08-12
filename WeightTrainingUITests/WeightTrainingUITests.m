@@ -60,4 +60,14 @@
     
 }
 
+- (void)test_150161667_station_record_defaults {
+    
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.tabBars.buttons[@"Stations"] tap];
+    [app.navigationBars[@"Stations"].buttons[@"Add"] tap];
+    
+    
+}
+
 @end

@@ -19,6 +19,7 @@
 #import <UIKit/UIKit.h>
 
 @class Record;
+@class Station;
 
 @interface RecordCreateViewController : UIViewController
 
@@ -40,6 +41,7 @@
 
 
 @property (nonatomic, strong) Record* record;
+@property (nonatomic, strong) Station* station;
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem* rightBarButtonItem;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem* leftBarButtonItem;

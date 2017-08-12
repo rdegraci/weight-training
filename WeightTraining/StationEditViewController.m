@@ -216,10 +216,10 @@
     
     if (self.isAdvancedSwitch.isOn) {
         self.advancedView.hidden = false;
-        self.settingsView.hidden = true;
+        self.standardView.hidden = true;
     } else {
         self.advancedView.hidden = true;
-        self.settingsView.hidden = false;
+        self.standardView.hidden = false;
     }
 }
 

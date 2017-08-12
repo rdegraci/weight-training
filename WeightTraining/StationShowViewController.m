@@ -103,6 +103,7 @@
     
     RecordCreateViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RecordCreateViewController"];
     
+    vc.station = self.station;
     vc.addToStation = ^(Record* record){
         [self.station addRecordsObject:record];
     };

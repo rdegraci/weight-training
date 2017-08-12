@@ -18,7 +18,7 @@
 
 
 #import "RecordCreateViewController.h"
-
+#import "Station+CoreDataClass.h"
 #import "Record+CoreDataClass.h"
 #import "AppDelegate.h"
 
@@ -63,22 +63,40 @@
     NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     self.record = [NSEntityDescription insertNewObjectForEntityForName:@"Record" inManagedObjectContext:managedObjectContext];
 
-    
-    self.record.createdAt = [NSDate date];
-    self.record.distance = 0;
-    self.record.firstSetReps = 0;
-    self.record.firstSetWeight = 0;
-    self.record.isAdvanced = false;
-    self.record.isMetric = false;
-    self.record.lapCount = 0;
-    self.record.secondSetReps = 0;
-    self.record.secondSetWeight = 0;
-    self.record.standardReps = 0;
-    self.record.standardSetWeight = 0;
-    self.record.thirdSetReps = 0;
-    self.record.thirdSetWeight = 0;
-    self.record.updatedAt = [NSDate date];
-    self.record.xsetCount = 0;
+    if (self.station) {
+        self.record.createdAt = [NSDate date];
+        self.record.distance = self.station.distance;
+        self.record.firstSetReps = self.station.firstSetReps;
+        self.record.firstSetWeight = self.station.firstSetWeight;
+        self.record.isAdvanced = self.station.isAdvanced;
+        self.record.isMetric = self.station.isMetric;
+        self.record.lapCount = self.station.lapCount;
+        self.record.secondSetReps = self.station.secondSetReps;
+        self.record.secondSetWeight = self.station.secondSetWeight;
+        self.record.standardReps = self.station.repCount;
+        self.record.standardSetWeight = self.station.weight;
+        self.record.thirdSetReps = self.station.thirdSetReps;
+        self.record.thirdSetWeight = self.station.thirdSetWeight;
+        self.record.updatedAt = [NSDate date];
+        self.record.xsetCount = self.station.xsetCount;
+    } else {
+        self.record.createdAt = [NSDate date];
+        self.record.distance = 0;
+        self.record.firstSetReps = 0;
+        self.record.firstSetWeight = 0;
+        self.record.isAdvanced = false;
+        self.record.isMetric = false;
+        self.record.lapCount = 0;
+        self.record.secondSetReps = 0;
+        self.record.secondSetWeight = 0;
+        self.record.standardReps = 0;
+        self.record.standardSetWeight = 0;
+        self.record.thirdSetReps = 0;
+        self.record.thirdSetWeight = 0;
+        self.record.updatedAt = [NSDate date];
+        self.record.xsetCount = 0;
+    }
+
     
     self.distanceTextField.text = [@(self.record.distance) stringValue];
     self.firstSetRepsTextField.text = [@(self.record.firstSetReps) stringValue];
@@ -94,9 +112,15 @@
     self.thirdSetWeightTextField.text = [@(self.record.thirdSetWeight) stringValue];
     self.xsetCountTextField.text = [@(self.record.xsetCount) stringValue];
     
+    if (self.record.isAdvanced) {
+        self.advancedView.hidden = false;
+        self.standardView.hidden = true;
+    } else {
+        self.advancedView.hidden = true;
+        self.standardView.hidden = false;
+    }
     
-    self.advancedView.hidden = true;
-    self.standardView.hidden = false;
+
 }
 
 

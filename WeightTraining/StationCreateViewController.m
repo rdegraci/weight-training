@@ -62,6 +62,8 @@
     NSAssert(self.thirdSetWeightTextField != nil, @"self.thirdSetWeightTextField should not be nil");
     NSAssert(self.xsetCountTextField != nil, @"self.xsetCountTextField should not be nil");
     NSAssert(self.weightTextField != nil, @"self.weightTextField should not be nil");
+    NSAssert(self.distanceTextField != nil, @"self.distanceTextField should not be nil");
+    NSAssert(self.lapTextField != nil, @"self.lapTextField should not be nil");
     
     NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     self.station = [NSEntityDescription insertNewObjectForEntityForName:@"Station" inManagedObjectContext:managedObjectContext];
@@ -83,6 +85,8 @@
     self.station.thirdSetWeight = 0;
     self.station.updatedAt = [NSDate date];
     self.station.xsetCount = 0;
+    self.station.lapCount = 0;
+    self.station.distance = 0;
     
     self.armSettingTextField.text = [@(self.station.armSetting) stringValue];
     self.backSettingTextField.text = [@(self.station.backSetting) stringValue];
@@ -100,9 +104,11 @@
     self.thirdSetWeightTextField.text = [@(self.station.thirdSetWeight) stringValue];
     self.xsetCountTextField.text = [@(self.station.xsetCount) stringValue];
     self.weightTextField.text = [@(self.station.weight) stringValue];
+    self.distanceTextField.text = [@(self.station.distance) stringValue];
+    self.lapTextField.text = [@(self.station.lapCount) stringValue];
     
     self.advancedView.hidden = true;
-    
+    self.standardview.hidden = false;
 
 }
 
@@ -209,6 +215,15 @@
         NSNumberFormatter *weightNumberFormatter = [[NSNumberFormatter alloc] init];
         weightNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         self.station.weight = [[weightNumberFormatter numberFromString:self.weightTextField.text] integerValue];
+
+        NSNumberFormatter *distanceNumberFormatter = [[NSNumberFormatter alloc] init];
+        distanceNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+        self.station.weight = [[distanceNumberFormatter numberFromString:self.weightTextField.text] integerValue];
+        
+        NSNumberFormatter *lapNumberFormatter = [[NSNumberFormatter alloc] init];
+        lapNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+        self.station.weight = [[lapNumberFormatter numberFromString:self.weightTextField.text] integerValue];
+        
         
         
         NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
@@ -229,10 +244,10 @@
 
 - (IBAction)advancedSettingsSwitchToggled:(id)sender {
     if (self.isAdvancedSwitch.on) {
-        self.settingsView.hidden = true;
+        self.standardview.hidden = true;
         self.advancedView.hidden = false;
     } else {
-        self.settingsView.hidden = false;
+        self.standardview.hidden = false;
         self.advancedView.hidden = true;
     }
 }
