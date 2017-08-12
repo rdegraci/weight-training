@@ -110,6 +110,7 @@
     self.advancedView.hidden = true;
     self.standardview.hidden = false;
 
+    [self.nameTextField becomeFirstResponder];
 }
 
 
@@ -144,6 +145,18 @@
 - (IBAction)touchRightBarButton:(id)sender {
     
     // Save
+    
+    if (self.nameTextField.text.length == 0) {
+        UIAlertController* alertController= [UIAlertController alertControllerWithTitle:@"Unable to save Station" message:@"Enter a name for this Station" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* alertAction =[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [alertController dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alertController addAction:alertAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+        [self.nameTextField becomeFirstResponder];
+        return;
+    }
     
     if (self.station) {
         
