@@ -65,6 +65,12 @@
     NSAssert(self.distanceTextField != nil, @"self.distanceTextField should not be nil");
     NSAssert(self.lapTextField != nil, @"self.lapTextField should not be nil");
     
+    NSAssert(self.standardview != nil, @"self.standardview should not be nil");
+    NSAssert(self.advancedView != nil, @"self.advancedView should not be nil");
+    
+    
+
+    
     NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     self.station = [NSEntityDescription insertNewObjectForEntityForName:@"Station" inManagedObjectContext:managedObjectContext];
     
