@@ -28,6 +28,5 @@
 
 @interface Utility : NSObject
 
-+ (Record*)recordWithMaxWeightOfStation:(Station*)station;
 
 @end

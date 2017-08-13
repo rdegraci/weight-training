@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class Record;
+@class Station;
+
 @interface Database : NSObject
+
++ (Record*)recordWithMaxWeightOfStation:(Station*)station;
+
++ (NSArray*)upperBodyStations;
++ (NSArray*)coreBodyStations;
++ (NSArray*)lowerBodyStations;
 
 @end

@@ -93,6 +93,9 @@
     self.station.xsetCount = 0;
     self.station.lapCount = 0;
     self.station.distance = 0;
+    self.station.upperBody = true;
+    self.station.coreBody = false;
+    self.station.lowerBody = false;
     
     self.armSettingTextField.text = [@(self.station.armSetting) stringValue];
     self.backSettingTextField.text = [@(self.station.backSetting) stringValue];
@@ -116,6 +119,8 @@
     self.advancedView.hidden = true;
     self.standardview.hidden = false;
 
+    [self.workoutTypeButton setTitle:@"Workout: Upper Body" forState:UIControlStateNormal];
+    
     [self.nameTextField becomeFirstResponder];
 }
 
@@ -270,4 +275,45 @@
         self.advancedView.hidden = true;
     }
 }
+
+- (IBAction)tapWorkoutType:(id)sender {
+    
+    UIAlertController* actionSheet = [UIAlertController alertControllerWithTitle:@"Workout Type"
+                                                                   message:@"Choose the type of workout for this Station"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    
+
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Upper Body" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        self.station.upperBody = true;
+        self.station.coreBody = false;
+        self.station.lowerBody = false;
+        [self.workoutTypeButton setTitle:@"Workout: Upper Body" forState:UIControlStateNormal];
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Core Body" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        self.station.upperBody = false;
+        self.station.coreBody = true;
+        self.station.lowerBody = false;
+        [self.workoutTypeButton setTitle:@"Workout: Core Body" forState:UIControlStateNormal];
+        
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Lower Body" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        self.station.upperBody = false;
+        self.station.coreBody = false;
+        self.station.lowerBody = true;
+        [self.workoutTypeButton setTitle:@"Workout: Lower Body" forState:UIControlStateNormal];
+        
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+    }]];
+    
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
 @end

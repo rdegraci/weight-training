@@ -45,6 +45,7 @@
 @property (strong, nonatomic) IBOutlet UIView *settingsView;
 @property (strong, nonatomic) IBOutlet UIView *advancedView;
 @property (strong, nonatomic) IBOutlet UIView *standardview;
+@property (strong, nonatomic) IBOutlet UIButton *workoutTypeButton;
 
 @property (nonatomic, strong) Station* station;
 

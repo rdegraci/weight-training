@@ -129,12 +129,16 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jGV-S6-Ppb">
-                                <rect key="frame" x="127" y="72" width="121" height="29"/>
+                                <rect key="frame" x="16" y="72" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Upper"/>
+                                    <segment title="Core"/>
+                                    <segment title="Lower"/>
                                 </segments>
+                                <connections>
+                                    <action selector="tappedWorkoutTypeSegmentControl:" destination="p4x-nf-ADd" eventType="valueChanged" id="kjK-w7-IDj"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaB-C5-3St" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="-163"/>
+            <point key="canvasLocation" x="1061.5999999999999" y="-163.26836581709148"/>
         </scene>
         <!--Record Edit View Controller-->
         <scene sceneID="jIF-sT-m73">
@@ -1253,15 +1257,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Qu-Mw-Lun">
-                                <rect key="frame" x="310" y="231" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="advancedSettingsSwitchToggled:" destination="eUv-2n-3nq" eventType="valueChanged" id="5w8-G8-IjL"/>
-                                </connections>
-                            </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6YQ-4Z-97u">
-                                <rect key="frame" x="310" y="192" width="51" height="31"/>
+                                <rect key="frame" x="73" y="192" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nqe-Ts-UkU">
@@ -1339,7 +1336,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNf-DS-rZp">
-                                        <rect key="frame" x="218" y="43" width="35" height="21"/>
+                                        <rect key="frame" x="215" y="41" width="35" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1516,13 +1513,28 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Advanced Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr3-Fv-FC1">
-                                <rect key="frame" x="16" y="236" width="144" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Advanced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr3-Fv-FC1">
+                                <rect key="frame" x="217" y="197" width="77" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Qu-Mw-Lun">
+                                <rect key="frame" x="310" y="192" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="advancedSettingsSwitchToggled:" destination="eUv-2n-3nq" eventType="valueChanged" id="5w8-G8-IjL"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8K-1b-gId">
+                                <rect key="frame" x="111" y="231" width="152" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Workout Type"/>
+                                <connections>
+                                    <action selector="tapWorkoutType:" destination="eUv-2n-3nq" eventType="touchUpInside" id="Ryx-fj-Eub"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1549,6 +1561,7 @@
                         <outlet property="thirdSetRepsTextField" destination="myn-DS-c07" id="4Bs-IT-BT4"/>
                         <outlet property="thirdSetWeightTextField" destination="l3G-Fp-Eww" id="af6-zB-rkn"/>
                         <outlet property="weightTextField" destination="DOh-cL-vqr" id="zx0-qh-oU0"/>
+                        <outlet property="workoutTypeButton" destination="p8K-1b-gId" id="u22-3h-f1V"/>
                         <outlet property="xsetCountTextField" destination="NFw-DF-0Fw" id="AYs-ni-XCH"/>
                     </connections>
                 </viewController>

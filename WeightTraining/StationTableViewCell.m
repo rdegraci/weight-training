@@ -22,7 +22,7 @@
 #import "Station+CoreDataClass.h"
 #import "Record+CoreDataClass.h"
 
-#import "Utility.h"
+#import "Database.h"
 
 @implementation StationTableViewCell
 
@@ -42,7 +42,7 @@
 
 - (void)configureWithStation:(Station*)station {
     
-    Record* record = [Utility recordWithMaxWeightOfStation:station];
+    Record* record = [Database recordWithMaxWeightOfStation:station];
     
     
     self.textLabel.text = station.name;

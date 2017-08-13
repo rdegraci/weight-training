@@ -24,6 +24,8 @@
 
 #import "StationTableViewCell.h"
 
+#import "Database.h"
+
 #import "Station+CoreDataClass.h"
 
 #import "AppDelegate.h"
@@ -45,6 +47,7 @@
     self.navigationItem.rightBarButtonItem = self.rightBarButtonItem;
     
     NSAssert(self.segmentControl != nil, @"self.segmentControl should not be nil");
+    [self.segmentControl setSelectedSegmentIndex:0];    // Upper body
     
     [self.stationTableView registerNib:[UINib nibWithNibName:@"StationTableViewCell" bundle:nil] forCellReuseIdentifier:@"StationTableViewCell"];
     
@@ -82,13 +85,19 @@
 }
 
 - (void)reloadTableView {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Station"];
-    NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    NSError *error = nil;
-    NSArray *results = [managedObjectContext executeFetchRequest:request error:&error];
-    if (!results) {
-    } else {
-        self.stations = results;
+    
+    switch (self.segmentControl.selectedSegmentIndex) {
+        case 0:
+            self.stations = [Database upperBodyStations];
+            break;
+        case 1:
+            self.stations = [Database coreBodyStations];
+            break;
+        case 2:
+            self.stations = [Database lowerBodyStations];
+            break;
+        default:
+            break;
     }
     [self.stationTableView reloadData];
 }
@@ -106,6 +115,9 @@
     [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
+- (IBAction)tappedWorkoutTypeSegmentControl:(id)sender {
+    [self reloadTableView];
+}
 
 
 
