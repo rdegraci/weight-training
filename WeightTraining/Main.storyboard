@@ -936,8 +936,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kv4-Iy-8de">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kv4-Iy-8de">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Record Details" id="BhJ-bC-4uw">
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="WNN-dw-YEm"/>
@@ -1095,11 +1096,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jou-I1-gKi" firstAttribute="top" secondItem="8xF-VF-ndg" secondAttribute="bottom" constant="44" id="BCB-JI-1El"/>
-                            <constraint firstItem="jou-I1-gKi" firstAttribute="trailing" secondItem="kv4-Iy-8de" secondAttribute="trailing" id="FVG-rq-17F"/>
-                            <constraint firstItem="kv4-Iy-8de" firstAttribute="top" secondItem="8xF-VF-ndg" secondAttribute="bottom" id="HkO-46-YkO"/>
                             <constraint firstItem="Q9g-B0-Tjm" firstAttribute="top" secondItem="jou-I1-gKi" secondAttribute="bottom" id="NPe-uh-Zhu"/>
                             <constraint firstItem="jou-I1-gKi" firstAttribute="leading" secondItem="OL7-cE-zqo" secondAttribute="leading" id="Qgx-1w-x91"/>
-                            <constraint firstItem="jou-I1-gKi" firstAttribute="leading" secondItem="kv4-Iy-8de" secondAttribute="leading" id="nO3-NS-hEV"/>
                             <constraint firstAttribute="trailing" secondItem="jou-I1-gKi" secondAttribute="trailing" id="prK-uJ-9mb"/>
                         </constraints>
                     </view>
