@@ -76,6 +76,8 @@
     self.thirdSetWeightTextField.text = [@(self.record.thirdSetWeight) stringValue];
     self.xsetCountTextField.text = [@(self.record.xsetCount) stringValue];
     
+    self.scrollView.contentSize = self.contentView.frame.size;
+    
     if (self.isAdvancedSwitch.isOn) {
         self.advancedView.hidden = false;
         self.standardView.hidden = true;

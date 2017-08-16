@@ -46,6 +46,9 @@
 @property (strong, nonatomic) IBOutlet UIView *advancedView;
 @property (strong, nonatomic) IBOutlet UIView *standardView;
 
+@property (strong, nonatomic) IBOutlet UIScrollView* scrollView;
+@property (strong, nonatomic) IBOutlet UIView* contentView;
+
 @property (nonatomic, strong) Station* station;
 
 

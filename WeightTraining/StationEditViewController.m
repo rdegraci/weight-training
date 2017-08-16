@@ -85,6 +85,7 @@
     self.xsetCountTextField.text = [@(self.station.xsetCount) stringValue];
     self.weightTextField.text = [@(self.station.weight) stringValue];
     
+    self.scrollView.contentSize = self.contentView.frame.size;
     
     if (self.isAdvancedSwitch.isOn) {
         self.advancedView.hidden = false;
