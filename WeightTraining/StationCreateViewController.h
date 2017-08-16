@@ -47,10 +47,14 @@
 @property (strong, nonatomic) IBOutlet UIView *standardview;
 @property (strong, nonatomic) IBOutlet UIButton *workoutTypeButton;
 
+@property (strong, nonatomic) IBOutlet UIScrollView* scrollView;
+@property (strong, nonatomic) IBOutlet UIView* contentView;
+
 @property (nonatomic, strong) Station* station;
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem* rightBarButtonItem;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem* leftBarButtonItem;
+
 - (IBAction)advancedSettingsSwitchToggled:(id)sender;
 
 @end

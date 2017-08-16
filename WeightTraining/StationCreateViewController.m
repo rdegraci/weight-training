@@ -122,6 +122,8 @@
     [self.workoutTypeButton setTitle:@"Workout: Upper Body" forState:UIControlStateNormal];
     
     [self.nameTextField becomeFirstResponder];
+    
+    self.scrollView.contentSize = self.contentView.frame.size;
 }
 
 
