@@ -29,11 +29,11 @@
             </objects>
             <point key="canvasLocation" x="-695" y="-162"/>
         </scene>
-        <!--Records-->
+        <!--Sessions-->
         <scene sceneID="4RF-z5-05l">
             <objects>
                 <navigationController id="cBK-bc-3C1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Records" id="ANC-fx-8ri"/>
+                    <tabBarItem key="tabBarItem" title="Sessions" id="ANC-fx-8ri"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wLV-tK-9Uz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -44,13 +44,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALI-yE-VBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="-163"/>
+            <point key="canvasLocation" x="-188" y="554"/>
         </scene>
-        <!--Stations-->
+        <!--Exercise Stations-->
         <scene sceneID="M2R-4P-1kn">
             <objects>
                 <navigationController id="jRr-pk-sn8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stations" id="wDN-Bd-ckh"/>
+                    <tabBarItem key="tabBarItem" title="Exercise Stations" id="wDN-Bd-ckh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0eG-FC-WO4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="185" y="-163"/>
         </scene>
-        <!--Records-->
+        <!--Sessions-->
         <scene sceneID="4yi-lI-5xz">
             <objects>
                 <viewController storyboardIdentifier="RecordIndexViewController" id="hWZ-hu-qJN" customClass="RecordIndexViewController" sceneMemberID="viewController">
@@ -101,7 +101,7 @@
                             <constraint firstItem="9Ae-FK-Lxy" firstAttribute="centerX" secondItem="WIO-KH-Ayd" secondAttribute="centerX" id="pTu-wd-oeY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Records" id="Rrh-3G-gvP">
+                    <navigationItem key="navigationItem" title="Sessions" id="Rrh-3G-gvP">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="21J-Z5-kUr"/>
                     </navigationItem>
                     <connections>
@@ -114,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="1060.8695652173915" y="554.34782608695662"/>
         </scene>
-        <!--Stations-->
+        <!--Exercise Stations-->
         <scene sceneID="bdZ-Fi-VOT">
             <objects>
                 <viewController storyboardIdentifier="StationIndexViewController" id="p4x-nf-ADd" customClass="StationIndexViewController" sceneMemberID="viewController">
@@ -157,7 +157,7 @@
                             <constraint firstItem="r39-qo-EPf" firstAttribute="top" secondItem="0Sz-dT-hxe" secondAttribute="bottom" id="q22-Kc-qQZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Stations" id="oy2-vw-Ynr">
+                    <navigationItem key="navigationItem" title="Exercise Stations" id="oy2-vw-Ynr">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HdJ-PX-UBl"/>
                     </navigationItem>
                     <connections>
@@ -185,7 +185,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1s-wT-InM">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Edit Record" id="QCl-bf-u9D">
+                                    <navigationItem title="Edit Session" id="QCl-bf-u9D">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1P2-TU-vkD"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="dTQ-iB-ZRt"/>
                                     </navigationItem>
@@ -550,7 +550,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6W-be-Mpq">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Edit Station" id="ucz-V6-ZaP">
+                                    <navigationItem title="Edit Exercise Station" id="ucz-V6-ZaP">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ud0-fT-cOb"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="fHa-z2-WJF"/>
                                     </navigationItem>
@@ -978,7 +978,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Record Details" id="BhJ-bC-4uw">
+                                    <navigationItem title="Session Detail" id="BhJ-bC-4uw">
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="WNN-dw-YEm"/>
                                     </navigationItem>
                                 </items>
@@ -1388,7 +1388,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IuC-9U-wt0">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Create Record" id="iId-Sp-hT4">
+                                    <navigationItem title="Add Session" id="iId-Sp-hT4">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DhL-oK-4D3"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="cYf-hg-ALq"/>
                                     </navigationItem>
@@ -1742,7 +1742,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5J6-Jv-gmP">
                                 <rect key="frame" x="0.0" y="20" width="413" height="44"/>
                                 <items>
-                                    <navigationItem title="Create Station" id="bR2-kL-ltk">
+                                    <navigationItem title="Add Exercise Station" id="bR2-kL-ltk">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fja-Ja-ygk"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="tMl-jj-O9g"/>
                                     </navigationItem>
