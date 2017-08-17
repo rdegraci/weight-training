@@ -22,7 +22,7 @@
 #import "RecordShowViewController.h"
 #import "StationIndexViewController.h"
 #import "RecordTableViewCell.h"
-
+#import "constants.h"
 #import "Record+CoreDataClass.h"
 
 #import "AppDelegate.h"
@@ -120,8 +120,8 @@
             UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {
                                                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                                                          self.tabBarController.selectedIndex = 1;
-                                                                          UINavigationController* navController = (UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:1];
+                                                                          self.tabBarController.selectedIndex = kStationTabBarControllerPosition;
+                                                                          UINavigationController* navController = (UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:kStationTabBarControllerPosition];
                                                                           StationIndexViewController* stationIndexController = [navController.viewControllers firstObject];
                                                                           [stationIndexController touchRightBarButton:nil];
                                                                       });
