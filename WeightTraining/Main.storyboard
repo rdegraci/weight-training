@@ -560,8 +560,15 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiY-ab-iMY" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kP1-Ux-Iuz">
+                                                <rect key="frame" x="184" y="171" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="tapWorkoutType:" destination="wnU-AN-qUu" eventType="touchUpInside" id="B5e-3V-EOd"/>
+                                                </connections>
+                                            </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PVL-gx-4TS">
                                                 <rect key="frame" x="348" y="50" width="51" height="31"/>
                                                 <connections>
@@ -597,7 +604,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObQ-lt-pId" userLabel="StandardView">
-                                                <rect key="frame" x="0.0" y="172" width="414" height="96"/>
+                                                <rect key="frame" x="0.0" y="220" width="414" height="96"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kg-PQ-V83">
                                                         <rect key="frame" x="16" y="13" width="34" height="21"/>
@@ -666,7 +673,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bd2-fk-cAS" userLabel="AdvancedView">
-                                                <rect key="frame" x="0.0" y="172" width="414" height="268"/>
+                                                <rect key="frame" x="0.0" y="220" width="414" height="268"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3co-n0-o4g">
                                                         <rect key="frame" x="338" y="215" width="60" height="30"/>
@@ -888,10 +895,12 @@
                                             <constraint firstItem="J85-EY-gKq" firstAttribute="leading" secondItem="jiY-ab-iMY" secondAttribute="leading" constant="16" id="1ZF-TG-cBh"/>
                                             <constraint firstItem="ObQ-lt-pId" firstAttribute="width" secondItem="jiY-ab-iMY" secondAttribute="width" id="9RU-mu-P22"/>
                                             <constraint firstItem="6md-Yb-K59" firstAttribute="top" secondItem="jiY-ab-iMY" secondAttribute="top" constant="8" id="AZD-jY-4Of"/>
-                                            <constraint firstAttribute="bottom" secondItem="bd2-fk-cAS" secondAttribute="bottom" id="CtQ-mF-eZ8"/>
-                                            <constraint firstItem="ObQ-lt-pId" firstAttribute="top" secondItem="jiY-ab-iMY" secondAttribute="top" constant="172" id="Cu4-Ap-ciN"/>
+                                            <constraint firstAttribute="bottom" secondItem="bd2-fk-cAS" secondAttribute="bottom" constant="12" id="CtQ-mF-eZ8"/>
+                                            <constraint firstItem="ObQ-lt-pId" firstAttribute="top" secondItem="jiY-ab-iMY" secondAttribute="top" constant="220" id="Cu4-Ap-ciN"/>
+                                            <constraint firstItem="kP1-Ux-Iuz" firstAttribute="centerX" secondItem="jiY-ab-iMY" secondAttribute="centerX" id="EX1-G4-8DE"/>
                                             <constraint firstItem="Ftj-bN-PkM" firstAttribute="top" secondItem="jiY-ab-iMY" secondAttribute="top" constant="89" id="FTj-zO-OUT"/>
                                             <constraint firstItem="cqK-NB-Vg3" firstAttribute="leading" secondItem="jiY-ab-iMY" secondAttribute="leading" constant="16" id="GVO-oq-tPe"/>
+                                            <constraint firstItem="kP1-Ux-Iuz" firstAttribute="top" secondItem="jiY-ab-iMY" secondAttribute="top" constant="171" id="HT6-77-aJi"/>
                                             <constraint firstAttribute="trailing" secondItem="6md-Yb-K59" secondAttribute="trailing" constant="17" id="JJv-KU-ZNH"/>
                                             <constraint firstItem="ObQ-lt-pId" firstAttribute="leading" secondItem="jiY-ab-iMY" secondAttribute="leading" id="K1j-31-pNn"/>
                                             <constraint firstAttribute="trailing" secondItem="PVL-gx-4TS" secondAttribute="trailing" constant="17" id="SbC-Xt-uM5"/>
@@ -905,16 +914,16 @@
                                             <constraint firstItem="aEs-fm-OaE" firstAttribute="top" secondItem="jiY-ab-iMY" secondAttribute="top" constant="50" id="ipf-ML-R1A"/>
                                             <constraint firstItem="PVL-gx-4TS" firstAttribute="top" secondItem="jiY-ab-iMY" secondAttribute="top" constant="50" id="kab-93-uI2"/>
                                             <constraint firstAttribute="trailing" secondItem="6Oe-ps-inm" secondAttribute="trailing" constant="74" id="l0z-7c-Jex"/>
-                                            <constraint firstItem="bd2-fk-cAS" firstAttribute="top" secondItem="jiY-ab-iMY" secondAttribute="top" constant="172" id="l2M-Tb-3h9"/>
+                                            <constraint firstItem="bd2-fk-cAS" firstAttribute="top" secondItem="jiY-ab-iMY" secondAttribute="top" constant="220" id="l2M-Tb-3h9"/>
                                             <constraint firstItem="6md-Yb-K59" firstAttribute="leading" secondItem="jiY-ab-iMY" secondAttribute="leading" constant="83" id="qFo-i9-Prw"/>
                                             <constraint firstItem="aEs-fm-OaE" firstAttribute="leading" secondItem="jiY-ab-iMY" secondAttribute="leading" constant="83" id="qY7-dT-wVw"/>
-                                            <constraint firstAttribute="height" constant="440" id="y1s-jZ-Qvn"/>
+                                            <constraint firstAttribute="height" constant="500" id="y1s-jZ-Qvn"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="jiY-ab-iMY" firstAttribute="top" secondItem="cyu-UO-OdH" secondAttribute="top" id="2IP-fy-tpV"/>
-                                    <constraint firstAttribute="bottom" secondItem="jiY-ab-iMY" secondAttribute="bottom" constant="232" id="3s9-hV-t28"/>
+                                    <constraint firstAttribute="bottom" secondItem="jiY-ab-iMY" secondAttribute="bottom" constant="172" id="3s9-hV-t28"/>
                                     <constraint firstItem="jiY-ab-iMY" firstAttribute="leading" secondItem="cyu-UO-OdH" secondAttribute="leading" id="ADn-Sh-S1d"/>
                                     <constraint firstItem="jiY-ab-iMY" firstAttribute="width" secondItem="cyu-UO-OdH" secondAttribute="width" id="Phf-1n-Ts8"/>
                                     <constraint firstAttribute="trailing" secondItem="jiY-ab-iMY" secondAttribute="trailing" id="qMS-Ph-gQ2"/>
@@ -955,6 +964,7 @@
                         <outlet property="thirdSetRepsTextField" destination="goB-Fa-crY" id="0ja-p7-1ig"/>
                         <outlet property="thirdSetWeightTextField" destination="3co-n0-o4g" id="HVV-Op-KcN"/>
                         <outlet property="weightTextField" destination="Gaw-fB-4yN" id="8dI-qG-5xA"/>
+                        <outlet property="workoutTypeButton" destination="kP1-Ux-Iuz" id="fmV-Qt-QmY"/>
                         <outlet property="xsetCountTextField" destination="gAd-bL-oHu" id="fiG-hE-PGZ"/>
                     </connections>
                 </viewController>

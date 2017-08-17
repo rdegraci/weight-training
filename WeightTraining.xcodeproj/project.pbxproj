@@ -15,6 +15,7 @@
 		B3345A2B1F2623DD00C70675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3345A291F2623DD00C70675 /* LaunchScreen.storyboard */; };
 		B3345A361F2623DD00C70675 /* WeightTrainingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3345A351F2623DD00C70675 /* WeightTrainingTests.m */; };
 		B3345A411F2623DD00C70675 /* WeightTrainingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3345A401F2623DD00C70675 /* WeightTrainingUITests.m */; };
+		B3A7E2041F45C33800758DCC /* StationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7E2031F45C33800758DCC /* StationViewController.m */; };
 		B3CC68CA1F28C0E000383789 /* RecordCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68B41F28C0E000383789 /* RecordCreateViewController.m */; };
 		B3CC68CB1F28C0E000383789 /* RecordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68B61F28C0E000383789 /* RecordEditViewController.m */; };
 		B3CC68CC1F28C0E000383789 /* RecordIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC68B81F28C0E000383789 /* RecordIndexViewController.m */; };
@@ -67,6 +68,8 @@
 		B3345A401F2623DD00C70675 /* WeightTrainingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeightTrainingUITests.m; sourceTree = "<group>"; };
 		B3345A421F2623DD00C70675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3A7E2011F4526CE00758DCC /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		B3A7E2021F45C33800758DCC /* StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationViewController.h; sourceTree = "<group>"; };
+		B3A7E2031F45C33800758DCC /* StationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationViewController.m; sourceTree = "<group>"; };
 		B3CC68B31F28C0E000383789 /* RecordCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCreateViewController.h; sourceTree = "<group>"; };
 		B3CC68B41F28C0E000383789 /* RecordCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordCreateViewController.m; sourceTree = "<group>"; };
 		B3CC68B51F28C0E000383789 /* RecordEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordEditViewController.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				B3E854DA1F3FF57F003448D6 /* Database.h */,
 				B3E854DB1F3FF57F003448D6 /* Database.m */,
 				B3A7E2011F4526CE00758DCC /* constants.h */,
+				B3A7E2021F45C33800758DCC /* StationViewController.h */,
+				B3A7E2031F45C33800758DCC /* StationViewController.m */,
 			);
 			path = WeightTraining;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				B3345A1A1F2623DD00C70675 /* main.m in Sources */,
 				B3CC68D31F28C0E000383789 /* StationShowViewController.m in Sources */,
 				B3CC68CE1F28C0E000383789 /* RecordTableViewCell.m in Sources */,
+				B3A7E2041F45C33800758DCC /* StationViewController.m in Sources */,
 				B3CC68DC1F2A6D1800383789 /* Utility.m in Sources */,
 				B3CC68CA1F28C0E000383789 /* RecordCreateViewController.m in Sources */,
 				B3CC68D01F28C0E000383789 /* StationCreateViewController.m in Sources */,

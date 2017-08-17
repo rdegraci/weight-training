@@ -18,10 +18,10 @@
 
 
 #import <UIKit/UIKit.h>
+#import "StationViewController.h"
 
-@class Station;
 
-@interface StationCreateViewController : UIViewController
+@interface StationCreateViewController : StationViewController
 
 @property (nonatomic, strong) IBOutlet UITextField* armSettingTextField;
 @property (nonatomic, strong) IBOutlet UITextField* backSettingTextField;
@@ -45,12 +45,12 @@
 @property (strong, nonatomic) IBOutlet UIView *settingsView;
 @property (strong, nonatomic) IBOutlet UIView *advancedView;
 @property (strong, nonatomic) IBOutlet UIView *standardview;
-@property (strong, nonatomic) IBOutlet UIButton *workoutTypeButton;
+
 
 @property (strong, nonatomic) IBOutlet UIScrollView* scrollView;
 @property (strong, nonatomic) IBOutlet UIView* contentView;
 
-@property (nonatomic, strong) Station* station;
+
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem* rightBarButtonItem;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem* leftBarButtonItem;
