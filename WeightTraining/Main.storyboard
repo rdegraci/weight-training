@@ -1787,9 +1787,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8K-1b-gId">
-                                                <rect key="frame" x="159.66666666666666" y="173" width="96" height="30"/>
-                                                <state key="normal" title="Workout Type"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8K-1b-gId">
+                                                <rect key="frame" x="151" y="173" width="113" height="34"/>
+                                                <state key="normal" title="Workout Type">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="tapWorkoutType:" destination="eUv-2n-3nq" eventType="touchUpInside" id="Ryx-fj-Eub"/>
                                                 </connections>
